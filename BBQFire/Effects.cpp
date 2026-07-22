@@ -4,7 +4,8 @@ const Effect* effects[] =
 {
     &embersEffect,
     &coalBedEffect,
-    &forgeEffect
+    &forgeEffect,
+    &fireplaceEffect
 };
 
 const uint8_t effectCount =
