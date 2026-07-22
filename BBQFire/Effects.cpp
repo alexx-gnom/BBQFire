@@ -3,7 +3,8 @@
 const Effect* effects[] =
 {
     &embersEffect,
-    &coalBedEffect
+    &coalBedEffect,
+    &forgeEffect
 };
 
 const uint8_t effectCount =
