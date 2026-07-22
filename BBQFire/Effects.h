@@ -1,6 +1,5 @@
 #pragma once
 
-void EmbersBegin();
-void EmbersLoop();
-
-extern const Effect embersEffect;
+#include "Embers.h"
+//#include "Fireplace.h"
+//#include "Candle.h"
