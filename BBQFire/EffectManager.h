@@ -14,4 +14,5 @@ struct Effect
 
 void NextEffect();
 void UpdateEffect();
+void SetEffect(uint8_t index);
 const char* CurrentEffectName();

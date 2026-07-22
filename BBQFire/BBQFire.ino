@@ -12,11 +12,17 @@ CRGB leds[NUM_LEDS];
 
 void setup()
 {
+    Serial.begin(115200);
+
+    while (!Serial)
+    {
+        // Для сумісності з платами, де потрібно дочекатися Serial
+    }
     FastLED.addLeds<LED_TYPE, LED_PIN, COLOR_ORDER>(leds, NUM_LEDS);
     FastLED.setBrightness(BRIGHTNESS);
     button.Begin();
 
-    EmbersBegin();
+    SetEffect(0);
 }
 
 void loop()
@@ -41,7 +47,7 @@ void loop()
     default:
         break;
     }
-    
+
     UpdateEffect();
 
     FastLED.show();

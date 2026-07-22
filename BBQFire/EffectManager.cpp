@@ -1,21 +1,31 @@
 #include "EffectManager.h"
 #include "Effects.h"
 
-static const Effect* effects[] =
-{
-    &embersEffect
-};
-
 static uint8_t currentEffect = 0;
+
+void SetEffect(uint8_t index)
+{
+    if (index >= effectCount)
+        index = 0;
+
+    currentEffect = index;
+
+    Serial.println();
+    Serial.println(F("=========================="));
+    Serial.print(F("Effect "));
+    Serial.print(currentEffect + 1);
+    Serial.print(F("/"));
+    Serial.print(effectCount);
+    Serial.print(F(": "));
+    Serial.println(effects[currentEffect]->name);
+    Serial.println(F("=========================="));
+
+    effects[currentEffect]->begin();
+}
 
 void NextEffect()
 {
-    currentEffect++;
-
-    if(currentEffect >= sizeof(effects)/sizeof(effects[0]))
-        currentEffect = 0;
-
-    effects[currentEffect]->begin();
+    SetEffect(currentEffect + 1);
 }
 
 void UpdateEffect()
