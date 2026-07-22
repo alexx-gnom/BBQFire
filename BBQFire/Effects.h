@@ -5,6 +5,7 @@
 #include "Forge.h"
 #include "Fireplace.h"
 #include "Plasma.h"
+#include "Aurora.h"
 
 extern const Effect* effects[];
 extern const uint8_t effectCount;
